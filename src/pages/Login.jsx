@@ -1,4 +1,6 @@
 import { useNavigate } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
+
 function Login() {
   console.log("Login.jsx called")
   const navigate = useNavigate()
@@ -8,14 +10,14 @@ function Login() {
   }
   return (
     <div>
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Name</label>
-      <input type="text" placeholder="Enter your name" id="name"/>
-      <label htmlFor="password">Password</label>
-      <input type="password" placeholder="Enter your password" id="password" />
-      <button>Login</button>
-    </form>
-      
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="name">Name</label>
+        <input type="text" placeholder="Enter your name" id="name"/>
+        <label htmlFor="password">Password</label>
+        <input type="password" placeholder="Enter your password" id="password" />
+        <button>Login</button>
+      </form>
+      <Outlet />
     </div>
   )
 }
